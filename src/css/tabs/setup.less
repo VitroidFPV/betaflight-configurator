@@ -4,23 +4,12 @@
 		background-color: var(--surface-200);
 		border-radius: 1rem;
 		border: 2px solid var(--surface-400);
-		a.reset {
+		.reset {
 			position: absolute;
 			display: block;
 			top: 1rem;
 			right: 1rem;
-			border-radius: 0.5rem;
-			bottom: 10px;
-			height: 28px;
-			line-height: 28px;
-			padding: 0 15px 0 15px;
-			text-align: center;
-			font-weight: bold;
-			background-color: var(--surface-400);
 			z-index: 100;
-			&:hover {
-				background-color: var(--surface-500);
-			}
 		}
 	}
 	.model-and-info {
@@ -59,37 +48,16 @@
         }
     }
 }
-#accel_calib_running {
-	display: none;
-	width: 100%;
-	position: relative;
-	padding: 5px 0 5px 0;
-	text-align: center;
-	background-color: var(--surface-300);
-	border-radius: 0.5rem;
-	border: 1px solid var(--primary-500);
-	color: var(--primary-500);
-	font-weight: bold;
-	font-size: 12px;
-	line-height: 13px;
-	transition: all ease 0.2s;
-	text-decoration: none;
-}
-#mag_calib_running {
-	display: none;
-	width: 100%;
-	position: relative;
-	padding: 5px 0 5px 0;
-	text-align: center;
-	background-color: var(--surface-300);
-	border-radius: 0.5rem;
-	border: 1px solid var(--primary-500);
-	color: var(--primary-500);
-	font-weight: bold;
-	font-size: 12px;
-	line-height: 13px;
-	transition: all ease 0.2s;
-	text-decoration: none;
+#accel_calib_running, #mag_calib_running {
+    display: none;
+    padding: 0.33rem 0.5rem;
+    text-align: center;
+    background-color: var(--surface-300);
+    border-radius: 0.5rem;
+    color: var(--surface-950);
+    cursor: wait;
+    font-weight: 600;
+    transition: all ease 0.2s;
 }
 #canvas {
 	width: 100% !important;
