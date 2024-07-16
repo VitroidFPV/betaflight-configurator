@@ -2007,6 +2007,19 @@ button.active {
         gap: 1rem;
     }
 }
+.flex-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: center;
+    &.row {
+        flex-direction: row;
+    }
+    &.column {
+        flex-direction: column;
+    }
+}
 @media not all and (max-width: 575px) {
     .visible-on-phone-only {
         display: none !important;
