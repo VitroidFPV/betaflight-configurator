@@ -1,6 +1,8 @@
 import { createApp } from "vue";
+import { createRouter, createMemoryHistory } from "vue-router";
 import { BetaflightComponents } from "./vue_components.js";
 import I18NextVue from "i18next-vue";
+import ui from "@nuxt/ui/vue-plugin";
 import i18next from "i18next";
 
 const logHead = "[VUE_LOADER]";
@@ -41,9 +43,23 @@ export function loadContent(contentElement, htmlPath, callback) {
             const el = $(this);
             const app = createApp({});
 
-            // Add the components plugin
-            app.use(BetaflightComponents);
+            // Create a router for each app instance (required by Nuxt UI) with default route
+            const router = createRouter({
+                history: createMemoryHistory(),
+                routes: [
+                    {
+                        path: "/",
+                        name: "tab-home",
+                        component: { template: "<div></div>" }, // Empty component for default route
+                    },
+                ],
+            });
+
+            // Add the router first, then other plugins
+            app.use(router);
             app.use(I18NextVue, { i18next });
+            app.use(ui);
+            app.use(BetaflightComponents);
 
             // Mount the app to this element and store the instance
             app.mount(el[0]);

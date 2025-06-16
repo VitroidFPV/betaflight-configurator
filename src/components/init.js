@@ -6,7 +6,9 @@ import "../js/localization.js";
 import "../js/injected_methods";
 import i18next from "i18next";
 import { createApp, reactive } from "vue";
+import { createRouter, createWebHistory } from "vue-router";
 import I18NextVue from "i18next-vue";
+import ui from "@nuxt/ui/vue-plugin";
 import FC from "../js/fc.js";
 import MSP from "../js/msp.js";
 import PortHandler from "../js/port_handler.js";
@@ -35,13 +37,31 @@ const betaflightModel = reactive({
 i18next.on("initialized", function () {
     console.log("i18n initialized, starting Vue framework");
 
+    // Create a minimal router required by Nuxt UI with a default route
+    const router = createRouter({
+        history: createWebHistory(),
+        routes: [
+            {
+                path: "/",
+                name: "home",
+                component: { template: "<div></div>" }, // Empty component for default route
+            },
+        ],
+    });
+
     const app = createApp({
         setup() {
             return betaflightModel;
         },
     });
 
-    app.use(I18NextVue, { i18next }).use(BetaflightComponents).mount("#main-wrapper");
+    // Use plugins in the correct order: router first, then ui, then others
+    app.use(router);
+    app.use(ui);
+    app.use(I18NextVue, { i18next });
+    app.use(BetaflightComponents);
+
+    app.mount("#main-wrapper");
 
     if (process.env.NODE_ENV === "development") {
         console.log("Development mode enabled, installing Vue tools");
