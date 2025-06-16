@@ -1,6 +1,7 @@
 /// <reference types="vitest" />
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import ui from "@nuxt/ui/vite";
 import path from "node:path";
 import { readFileSync } from "node:fs";
 import copy from "rollup-plugin-copy";
@@ -71,6 +72,7 @@ export default defineConfig({
     },
     plugins: [
         vue(),
+        ui(),
         serveLocalesPlugin(),
         copy({
             targets: [
