@@ -78,11 +78,11 @@ export default defineComponent({
     white-space: nowrap;
     gap: 0.5rem;
     bottom: 0;
-    width: calc(100% - 20px);
-    height: 20px;
+    width: 100%;
     line-height: 20px;
     padding: 0.5rem 1rem;
     background-color: var(--surface-300);
+
     .message {
         margin-right: 0.25rem;
     }
