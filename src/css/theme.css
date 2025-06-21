@@ -5,17 +5,17 @@
 */
 
 body {
-    --primary-50: #fffaeb;
-    --primary-100: #fff4d6;
-    --primary-200: #ffe9ad;
-    --primary-300: #ffdc7a;
-    --primary-400: #ffcd42;
+    --primary-50: #fffeea;
+    --primary-100: #fffac5;
+    --primary-200: #fff685;
+    --primary-300: #ffea46;
+    --primary-400: #ffdb1b;
     --primary-500: #ffbb00;
-    --primary-600: #e6a800;
-    --primary-700: #cc9600;
-    --primary-800: #a87b00;
-    --primary-900: #7a5a00;
-    --primary-950: #5c4300;
+    --primary-600: #e29000;
+    --primary-700: #bb6502;
+    --primary-800: #984e08;
+    --primary-900: #7c400b;
+    --primary-950: #482100;
 
     --primary-transparent-1: rgba(255, 187, 0, 0.1);
     --primary-transparent-2: rgba(255, 187, 0, 0.2);
