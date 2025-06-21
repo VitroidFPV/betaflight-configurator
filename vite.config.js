@@ -72,7 +72,19 @@ export default defineConfig({
     },
     plugins: [
         vue(),
-        ui(),
+        ui({
+            ui: {
+                colors: {
+                    primary: "primary",
+                    neutral: "neutral",
+                },
+                button: {
+                    slots: {
+                        base: "cursor-pointer justify-center font-semibold",
+                    },
+                },
+            },
+        }),
         serveLocalesPlugin(),
         copy({
             targets: [

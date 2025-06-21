@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+@source "../../vite.config.js";
 
 @theme static {
     --color-primary-50: #fffeea;
