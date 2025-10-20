@@ -3,6 +3,7 @@ import BetaflightLogo from "../components/betaflight-logo/BetaflightLogo.vue";
 import StatusBar from "../components/status-bar/StatusBar.vue";
 import BatteryIcon from "../components/quad-status/BatteryIcon.vue";
 import PortPicker from "../components/port-picker/PortPicker.vue";
+import SensorStatus from "../components/sensor-status/SensorStatus.vue";
 
 // Create a Vue plugin that registers all components globally
 export const BetaflightComponents = {
@@ -13,5 +14,6 @@ export const BetaflightComponents = {
         app.component("StatusBar", StatusBar);
         app.component("BatteryIcon", BatteryIcon);
         app.component("PortPicker", PortPicker);
+        app.component("SensorStatus", SensorStatus);
     },
 };

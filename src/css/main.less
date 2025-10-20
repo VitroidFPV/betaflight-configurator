@@ -244,6 +244,43 @@ input[type="number"] {
     font-weight: bold !important;
     font-style: italic;
 }
+.headerbar-container {
+    display: grid;
+    height: 5rem;
+    padding: 1rem;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+    background-color: var(--surface-200);
+    grid-template-columns: 1fr repeat(4, fit-content(100%));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    .headerbar-menu-btn-container {
+        display: none;
+    }
+    .headerbar-logo-container {
+        grid-row: span 2;
+        grid-column-end: 1;
+    }
+    .headerbar-port-picker-container {
+        grid-row: span 2;
+        grid-column-end: 2;
+    }
+    #quad-status_wrapper {
+        grid-row: span 2;
+        grid-column-end: 3;
+    }
+    #sensor-status {
+        grid-row: span 2;
+        grid-column-end: 4;
+    }
+    #dataflash_wrapper_global {
+        grid-row: span 2;
+        grid-column-end: 5;
+    }
+    #header_buttons {
+        grid-row: span 2;
+        grid-column-end: 6;
+    }
+}
 #main-wrapper {
     height: 100vh;
     background-color: var(--surface-100);
@@ -329,6 +366,7 @@ input[type="number"] {
     display: flex;
     align-items: center;
     gap: 2rem;
+    justify-content: flex-end;
 
     a.firmware_flasher_button__link {
         display: block;

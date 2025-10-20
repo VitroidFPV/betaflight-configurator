@@ -108,7 +108,7 @@ export default defineComponent({
 .web-port-picker {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-left: auto;
     align-items: start;
     gap: 0.5rem;
